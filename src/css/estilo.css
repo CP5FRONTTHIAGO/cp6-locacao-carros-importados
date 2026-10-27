@@ -1,19 +1,37 @@
 :root{
-    --color-primary:green;
-    --bg-dark:#141414;
+    --color-primary:#d4af37;
+    --bg-dark:#0b0b0f;
+    --bg-card:#16161d;
     --text-color:#fff;
-    --btn-color:#95ff00;
-    --header-bg:rgba(0,0,0,0.8);
-    --linear-bg: linear-gradient(to right, aqua, purple);
+    --text-muted:#a1a1aa;
+    --btn-color:#d4af37;
+    --header-bg:rgba(0,0,0,0.85);
+    --linear-bg: linear-gradient(to right, #d4af37, #f5e6a8);
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    background-color: var(--bg-dark);
+    color: var(--text-color);
 }
 
 .logo:hover{
-    letter-spacing: 10px;
+    letter-spacing: 6px;
     animation: acender 0.5s forwards;
 }
 @keyframes acender {
     to{
         color:var(--text-color);
-        text-shadow: 0 0 10px #32f323, 0 0 20px #a8dfe1;
+        text-shadow: 0 0 10px #d4af37, 0 0 20px #f5e6a8;
     }
+}
+
+.texto-gradiente{
+    background: var(--linear-bg);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
 }
