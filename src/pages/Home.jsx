@@ -1,5 +1,9 @@
 import { Link } from "react-router-dom"
 import hero from "../assets/hero.jpg"
+import Card from "../components/Card"
+import carros from "../data/carros"
+
+const destaques = carros.slice(0, 3)
 
 const diferenciais = [
   { icone: "🏎️", titulo: "Frota exclusiva", texto: "Modelos importados da Alemanha, Itália, França e Estados Unidos." },
@@ -55,6 +59,23 @@ const Home = () => {
               <h3 className="mt-4 text-lg font-semibold text-white">{item.titulo}</h3>
               <p className="mt-2 text-sm text-zinc-400">{item.texto}</p>
             </div>
+          ))}
+        </div>
+      </section>
+
+      <section className="px-[5%] pb-20">
+        <div className="flex flex-wrap items-end justify-between gap-4">
+          <div>
+            <p className="text-sm font-semibold uppercase tracking-[0.3em] text-[#d4af37]">Destaques</p>
+            <h2 className="mt-2 text-3xl font-bold text-white md:text-4xl">Os mais alugados do mês</h2>
+          </div>
+          <Link to="/carros" className="font-semibold text-[#d4af37] hover:underline">
+            Ver todos os carros →
+          </Link>
+        </div>
+        <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {destaques.map((carro) => (
+            <Card key={carro.id} carro={carro} />
           ))}
         </div>
       </section>
