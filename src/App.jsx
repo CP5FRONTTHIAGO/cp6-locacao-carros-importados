@@ -3,7 +3,7 @@ import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import Home from './pages/Home'
 import Contato from './pages/Contato'
-import Jogos from './pages/Jogos'
+import Carros from './pages/Carros'
 import Login from './pages/Login'
 import Error from './pages/Error'
 
@@ -15,7 +15,7 @@ const App = () => {
         <Navbar/>
         <Routes>
           <Route path="/" element={<Home/>}/>
-          <Route path="/jogos" element={<Jogos/>}/>
+          <Route path="/carros" element={<Carros/>}/>
           <Route path="/contato" element={<Contato/>}/>
           <Route path="/login" element={<Login />}/>
           <Route path="*" element={<Error />} />
