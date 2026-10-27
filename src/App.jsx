@@ -1,27 +1,38 @@
-import {BrowserRouter as Router,Routes,Route}from 'react-router-dom'
+import { useEffect } from 'react'
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import Home from './pages/Home'
-import Contato from './pages/Contato'
 import Carros from './pages/Carros'
+import Contato from './pages/Contato'
 import Login from './pages/Login'
 import Error from './pages/Error'
 
+const RolarParaTopo = () => {
+  const { pathname } = useLocation()
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'instant' })
+  }, [pathname])
+
+  return null
+}
 
 const App = () => {
   return (
     <Router>
-      <div className="min-h-screen flex flex-col justify-between bg-[#141414] pt-4">
+      <RolarParaTopo/>
+      <div className="min-h-screen flex flex-col bg-[#0b0b0f]">
         <Navbar/>
         <Routes>
           <Route path="/" element={<Home/>}/>
           <Route path="/carros" element={<Carros/>}/>
           <Route path="/contato" element={<Contato/>}/>
-          <Route path="/login" element={<Login />}/>
-          <Route path="*" element={<Error />} />
+          <Route path="/login" element={<Login/>}/>
+          <Route path="*" element={<Error/>}/>
         </Routes>
+        <Footer/>
       </div>
-      <Footer/>
     </Router>
   )
 }
